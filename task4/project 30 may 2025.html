@@ -1,0 +1,233 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Page with Image</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>My Responsive Page</h1>
+    <nav>
+      <ul class="nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="left-column">
+      <h2>Left Column</h2>
+      <p>This is the left column content.</p>
+      <img src="https://picsum.photos/600/300" alt="Sample Image" />
+    </div>
+    <div class="right-column">
+      <h2>Right Column</h2>
+      <p>This is the right column content.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Responsive Design</p>
+  </footer>
+</body>
+</html><style>/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #ece9e6, #ffffff);
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Header with gradient */
+header {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  animation: fadeInDown 1s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Nav Styles */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 2rem; /* vertical gap between button rows */
+  column-gap: 3rem; /* horizontal gap */
+  padding: 1rem 0;
+  margin-top: 1rem;
+  list-style: none;
+}
+
+/* Buttons */
+.nav a {
+  display: inline-block;
+  padding: 0.9rem 1.8rem;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.4);
+  white-space: nowrap;
+  margin-bottom: 1rem; /* ensures space if wrap occurs */
+}
+
+.nav a:hover {
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  box-shadow: 0 6px 16px rgba(255, 106, 0, 0.7);
+  color: #fff;
+}
+/* Home Button */
+.nav li:nth-child(1) a {
+  border-image: linear-gradient(135deg, #00dbde, #fc00ff); /* Cyan to Pink */
+  border-image-slice: 1;
+  animation: glow-cyan 1.8s ease-in-out infinite alternate;
+}
+
+/* About Button */
+.nav li:nth-child(2) a {
+  border-image: linear-gradient(135deg, #f7971e, #ffd200); /* Orange to Yellow */
+  border-image-slice: 1;
+  animation: glow-orange 1.8s ease-in-out infinite alternate;
+}
+
+/* Contact Button */
+.nav li:nth-child(3) a {
+  border-image: linear-gradient(135deg, #00c3ff, #ffff1c); /* Blue to Yellow */
+  border-image-slice: 1;
+  animation: glow-blue 1.8s ease-in-out infinite alternate;
+}
+
+/* Hover Background for All Buttons */
+.nav a:hover {
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Glow Animations */
+@keyframes glow-cyan {
+  0% { box-shadow: 0 0 6px rgba(0, 219, 222, 0.5); }
+  100% { box-shadow: 0 0 18px rgba(0, 219, 222, 1); }
+}
+
+@keyframes glow-orange {
+  0% { box-shadow: 0 0 6px rgba(255, 210, 0, 0.5); }
+  100% { box-shadow: 0 0 18px rgba(255, 210, 0, 1); }
+}
+
+@keyframes glow-blue {
+  0% { box-shadow: 0 0 6px rgba(0, 195, 255, 0.5); }
+  100% { box-shadow: 0 0 18px rgba(0, 195, 255, 1); }
+}
+
+/* Container */
+.container {
+  display: flex;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+  animation: fadeIn 1.2s ease;
+}
+
+/* Columns */
+.left-column, .right-column {
+  flex: 1;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.left-column:hover, .right-column:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  color: #5f27cd;
+  margin-bottom: 1rem;
+}
+
+/* Images */
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 1rem;
+  transition: transform 0.4s ease;
+}
+
+img:hover {
+  transform: scale(1.02);
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.95rem;
+  animation: fadeInUp 1s ease;
+  margin-top: 3rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  body {
+    font-size: 15px;
+  }
+}</style>
